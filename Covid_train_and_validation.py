@@ -72,7 +72,7 @@ def train():
 
     # Loss and optimizer
     criterion = nn.CrossEntropyLoss().to(device)
-    optimizer = torch.optim.SGD(model.parameters(), lr=1e-3, momentum=0.9)
+    optimizer = torch.optim.Adam(model.parameters(), lr=1e-3, betas=(0.9, 0.999))
 
     # Load pretrained checkpoint if available
     pretrained_checkpoint_path = None
