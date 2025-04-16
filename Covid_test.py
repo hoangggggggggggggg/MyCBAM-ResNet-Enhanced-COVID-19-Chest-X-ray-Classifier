@@ -39,14 +39,14 @@ def test():
     ])
 
     # Load test dataset using custom CovidDataset class
-    test_dataset = CovidDataset(root="C:\\Users\\laptop\\Downloads\\latest_updated_covid\\Lung Segmentation Data\\Lung Segmentation Data",
+    test_dataset = CovidDataset(root="/content/dataset/latest_updated_covid/Lung Segmentation Data/Lung Segmentation Data",
                                 is_train="test", transform=transform)
     test_dataloader = DataLoader(dataset=test_dataset, batch_size=16, shuffle=True, num_workers=4, drop_last=False)
 
     # Initialize the model and load pretrained weights
     model = Model()
-    checkpoint = torch.load("C:\\Users\\laptop\\PycharmProjects\\PythonProject2\\train_models\\New_Covid_Model_with_CBAM_Adam\\best_model.pt")
-    model.load_state_dict(checkpoint["model_state_dict"])
+    checkpoint = torch.load("/content/train_models/animal/best_model.pt")
+    model.load_state_dict(checkpoint["/content/train_models/animal/model_state_dict"])
     model.to(device)
 
     # Lists to store predictions and labels for evaluation
