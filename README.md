@@ -34,16 +34,19 @@ Loss in validation:
 | **Loss visualization**  |
 |-------------------------|
 | ![img_4.png](img_4.png) |
+
 Accuracy in validation: 
 
 | **Loss visualization** |
 |--|
 | ![img_5.png](img_5.png) |
+
 Confusion Matrix:
 
 | **CBAM Confusion Matrix**                                                          | **ResNet-18 Confusion Matrix** |
 |------------------------------------------------------------------------------------|--|
 | ![img.png](img.png) | ![img_1.png](img_1.png) |
+
 Classification Report:
 
 | **CBAM Confusion Matrix**                                       | **ResNet-18 Confusion Matrix** |
