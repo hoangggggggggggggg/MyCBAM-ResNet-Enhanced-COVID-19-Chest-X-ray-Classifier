@@ -56,7 +56,7 @@ def compute_mean_std(dataloader):
     return mean, std
 
 if __name__ == '__main__':
-    root_path = "C:\\Users\\laptop\\Downloads\\latest_updated_covid\\Lung Segmentation Data\\Lung Segmentation Data"
+    root_path = "/content/dataset/latest_updated_covid/Lung Segmentation Data/Lung Segmentation Data"
 
     # Temporary transform before computing mean and std
     temp_transform = Compose([

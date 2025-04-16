@@ -1,6 +1,6 @@
-# 
+# An enhanced deep learning model built upon CBAM and residual connections to outperform ResNet-18 in classifying COVID-19 from chest X-ray images.
 
- ## ABSTRACT
+## ABSTRACT
 This project focuses on building a deep learning model based on the Residual Network (ResNet) architecture combined with the Convolutional Block Attention Module (CBAM) to detect COVID-19 from chest X-ray images. By utilizing this architecture, the model is expected to improve detection performance by focusing on more relevant features in the images. The goal of this project is to clearly demonstrate the superiority of this model over the ResNet18 model in classifying chest X-ray images.<br>
 <br>
 
@@ -11,9 +11,39 @@ While PCR testing is an effective diagnostic method, it requires advanced infras
 <br>
 <br>
 ## Project goals
-This project focuses on developing a deep learning model based on the Residual Network architecture enhanced with the Convolutional Block Attention Module (CBAM) to improve the performance of COVID-19 diagnosis using chest X-ray images. CBAM allows the model to focus on the most relevant features in the image, thereby enhancing classification accuracy. The proposed model’s effectiveness is evaluated through comparison with the standard ResNet-18 architecture, highlighting the advantages of integrating attention mechanisms in deep learning for medical image analysis.
+This project focuses on developing a deep learning model based on the Residual Network architecture enhanced with the Convolutional Block Attention Module (CBAM) to improve the performance of COVID-19 diagnosis using raw chest X-ray images, without relying on lung segmentation masks or infection region masks. CBAM allows the model to focus on the most relevant features in the image, thereby enhancing classification accuracy. The proposed model’s effectiveness is evaluated through comparison with the standard ResNet-18 architecture, highlighting the advantages of integrating attention mechanisms in deep learning for medical image analysis.
 
 By improving diagnostic precision and reliability, this model can assist healthcare professionals in quickly and effectively identifying COVID-19 cases and contribute to better preparedness for future public health crises.
+<br>
+<br>
+## Result
+The deep learning model integrated with the Convolutional Block Attention Module (CBAM) and ResNet-18 have been tested for classifying chest X-ray images. The results demonstrate that the CBAM model outperforms ResNet-18 in detecting COVID-19.
+
+In addition to training the CBAM model, I also trained and tested ResNet-18 simultaneously. In the code I uploaded to GitHub, there is no code for ResNet-18, but you just need to change the selected model for training and testing, as well as the number of color channels in the dataset file, test, and train that I uploaded, to be compatible with ResNet-18 if you also want to compare performance.
+
+Validation loss curve: the blue line corresponds to the custom-designed model, while the orange line represents the baseline ResNet-18 model.
+
+| **Loss visualization**  |
+|-------------------------|
+| ![img_4.png](img_4.png) |
+
+Validation accuracy curve: the blue line corresponds to the custom-designed model, while the orange line represents the baseline ResNet-18 model.
+
+| **Accuracy visualization** |
+|----------------------------|
+| ![img_5.png](img_5.png)    |
+
+Confusion Matrix:
+
+| ** Custom-designed model** | **ResNet-18** |
+|---------------------------------------------|--|
+| ![img.png](img.png)                         | ![img_1.png](img_1.png) |
+
+Classification Report:
+
+| **Custom-designed model**                                       | **ResNet-18** |
+|--------------------------------------------|--|
+| ![img_2.png](img_2.png) | ![img_3.png](img_3.png) |
 <br>
 <br>
 
@@ -24,35 +54,6 @@ This study uses the COVID-QU-Ex dataset developed by Qatar University, which con
 <a href="https://www.kaggle.com/datasets/anasmohammedtahir/covidqu/data">kaggle Dataset</a>
 <br>
 <br>
-## Result
-The deep learning model integrated with the Convolutional Block Attention Module (CBAM) and ResNet-18 have been tested for classifying chest X-ray images. The results demonstrate that the CBAM model outperforms ResNet-18 in detecting COVID-19.
-
-In addition to training the CBAM model, I also trained and tested ResNet-18 simultaneously. In the code I uploaded to GitHub, there is no code for ResNet-18, but you just need to change the selected model for training and testing, as well as the number of color channels in the dataset file, test, and train that I uploaded, to be compatible with ResNet-18 if you also want to compare performance.
-
-Loss in validation: 
-
-| **Loss visualization**  |
-|-------------------------|
-| ![img_4.png](img_4.png) |
-
-Accuracy in validation: 
-
-| **Loss visualization** |
-|--|
-| ![img_5.png](img_5.png) |
-
-Confusion Matrix:
-
-| **CBAM Confusion Matrix**                                                          | **ResNet-18 Confusion Matrix** |
-|------------------------------------------------------------------------------------|--|
-| ![img.png](img.png) | ![img_1.png](img_1.png) |
-
-Classification Report:
-
-| **CBAM Confusion Matrix**                                       | **ResNet-18 Confusion Matrix** |
-|-----------------------------------------------------------------|--|
-| ![img_2.png](img_2.png) | ![img_3.png](img_3.png) |
-<br>
-<br>
 
 ## Conclusion
+This study demonstrates that integrating the Convolutional Block Attention Module (CBAM) into a residual deep learning architecture significantly enhances the performance of chest X-ray (CXR) image classification, particularly for COVID-19 diagnosis. The custom-designed model outperformed the baseline ResNet-18 in terms of accuracy and robustness across all evaluation metrics. By enabling the model to focus more effectively on critical regions of the lungs, CBAM contributes to better feature representation and more precise predictions. These results highlight the potential of attention mechanisms in improving deep learning models for medical image analysis. The proposed architecture can serve as a solid foundation for future work in automated diagnostic systems using radiographic imaging.
